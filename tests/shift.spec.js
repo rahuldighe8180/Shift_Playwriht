@@ -6,10 +6,10 @@ import { ShiftPage } from './module/config/shiftPage';
 
  test.use({
   viewport: { width: 1200, height: 600 },
-  launchOptions: { slowMo: 900 }
+  launchOptions: { slowMo: 700 }
 });
  
-test.setTimeout(180000);
+test.setTimeout(110000);
 
 
 test('Create Rate - Shift', async ({ page }) => {
@@ -22,7 +22,7 @@ test('Create Rate - Shift', async ({ page }) => {
   await login.goto();
   await login.login('admin', 'Admin@Simplify');
 
-  await dashboard.openProgram('codeNova');
+  await dashboard.openProgram('codeN');
   await dashboard.openDashboard();
   await dashboard.openSelfConfig();
 
@@ -30,6 +30,6 @@ test('Create Rate - Shift', async ({ page }) => {
   await config.openRateType();
   await config.openShiftList();
 
-  await shift.createShift('Baap IT', '10:30');
+  await shift.createShift('Morning', '10:30');
 
 });

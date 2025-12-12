@@ -13,7 +13,9 @@ export class SelfConfigPage {
   }
 
   async openShiftList() {
-    await this.page.getByText('Shift', { exact: true }).click();
+await this.page.locator('li', { has: this.page.getByText('Shift', { exact: true }) }).first().click();
+
+    // await this.page.getByText('Shift', { exact: true }).click();
     await this.page.getByText('local_library Shift Type').click();
   }
 }
